@@ -3,9 +3,6 @@ package com.example.crm.entity;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
-/**
- * JPA Entity đại diện cho bảng lưu trữ thông tin Sự cố trong Database.
- */
 @Entity
 @Table(name = "incident_reports")
 public class IncidentReport {
@@ -35,11 +32,9 @@ public class IncidentReport {
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    // Hibernate/JPA bắt buộc phải có constructor không tham số (No-args constructor)
     public IncidentReport() {
     }
 
-    // Constructor dùng để khởi tạo Entity từ DTO sau khi đã validate an toàn
     public IncidentReport(String driverName, String driverPhone, String incidentDescription, 
                           String location, LocalDateTime reportedTime, String severityLevel) {
         this.driverName = driverName;
@@ -55,7 +50,6 @@ public class IncidentReport {
         this.createdAt = LocalDateTime.now();
     }
 
-    // Getters and Setters
     public Long getId() { return id; }
     public String getDriverName() { return driverName; }
     public void setDriverName(String driverName) { this.driverName = driverName; }

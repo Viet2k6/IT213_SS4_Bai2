@@ -9,7 +9,6 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("=== BẮT ĐẦU KHỞI TẠO ===");
         
-        // 1. Giả lập quá trình bóc tách từ LLM ra Record DTO
         System.out.println("\n1. Khởi tạo DTO Record từ dữ liệu thô của LLM...");
         IncidentExtraction extraction = new IncidentExtraction(
                 "Nguyễn Văn A",
@@ -22,7 +21,6 @@ public class Main {
         System.out.println("-> DTO tạo thành công:");
         System.out.println(extraction);
         
-        // 2. Chuyển đổi an toàn từ DTO sang JPA Entity
         System.out.println("\n2. Thực hiện mapping từ DTO sang JPA Entity...");
         IncidentReport report = new IncidentReport(
                 extraction.driverName(),
